@@ -59,7 +59,7 @@
     <UnityVersion>2022.3.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\f1418\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.2\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\f1418\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.3\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="G:\Unity\2022.3.15f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="G:\Unity\2022.3.15f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Controller\Utilities.cs" />
     <Compile Include="Assets\Scripts\BuildingsScript\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\TaskClass\ProductionTask.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\State_Attack.cs" />
     <Compile Include="Assets\Scripts\UnitsScript\ActorVisualHandler.cs" />
     <Compile Include="Assets\AssetsStore\Loading Games\Toon City Pack\Demo\Scripts\TrafficLights.cs" />
     <Compile Include="Assets\Scripts\GUI\BuildingScripts\UnitProductionUI.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Scripts\UnitsScript\Worker\Builder.cs" />
     <Compile Include="Assets\Scripts\ComAI\System\ComUnitProduceManager.cs" />
     <Compile Include="Assets\Scripts\Octree\Octree.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\StateBase.cs" />
     <Compile Include="Assets\Scripts\GUI\BuildingScripts\BuildingUI.cs" />
     <Compile Include="Assets\Scripts\Controller\ChoseController.cs" />
     <Compile Include="Assets\Scripts\BuildingsScript\ResourceProductionFunc.cs" />
@@ -109,11 +111,14 @@
     <Compile Include="Assets\Scripts\UnitsScript\Enemy\AIAttackMotion.cs" />
     <Compile Include="Assets\AssetsStore\Loading Games\Toon City Pack\Demo\Scripts\StreetLight.cs" />
     <Compile Include="Assets\Scripts\UnitsScript\ActorAttack.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\State_Idle.cs" />
     <Compile Include="Assets\Scripts\BuildingsScript\UnitsProducting\BuildingController_UnitsProducting.cs" />
     <Compile Include="Assets\Scripts\AutoScripts\CarMoveOnSharpTestScriptDoTween.cs" />
     <Compile Include="Assets\Scripts\UnitsScript\UnitProducingManager.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\StateFactory.cs" />
     <Compile Include="Assets\Scripts\GUI\ResourceScripts\Resource.cs" />
     <Compile Include="Assets\Scripts\ComAI\System\ComResourceManager.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\State_Move.cs" />
     <Compile Include="Assets\AssetsStore\Loading Games\Toon City Pack\Demo\Scripts\PoliceSiren.cs" />
     <Compile Include="Assets\Scripts\Octree\Mover.cs" />
     <Compile Include="Assets\Scripts\TestScripts 1\WhyPlaneChange.cs" />
@@ -122,10 +127,12 @@
     <Compile Include="Assets\Scripts\Controller\CameraController.cs" />
     <Compile Include="Assets\Scripts\SoldierObj.cs" />
     <Compile Include="Assets\Scripts\Manager\Singleton.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\IState.cs" />
     <Compile Include="Assets\Scripts\MenuUI\SC_BackgroundScaler.cs" />
     <Compile Include="Assets\Scripts\Octree\OctreeGenerator.cs" />
     <Compile Include="Assets\Scripts\AutoScripts\CarMoveOnSharpTestScriptAll.cs" />
     <Compile Include="Assets\AssetsStore\Loading Games\Toon City Pack\Demo\Scripts\Helicopter.cs" />
+    <Compile Include="Assets\Scripts\UnitsScript\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Animate\AnimationEventListener.cs" />
     <Compile Include="Assets\UMotionExamples\Miscellaneous\Scripts\ResetPosition.cs" />
     <Compile Include="Assets\Scripts\Manager\ResourceManager.cs" />
