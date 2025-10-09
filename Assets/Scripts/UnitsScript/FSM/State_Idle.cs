@@ -10,13 +10,14 @@ public abstract class State_Idle : StateBase
     public override void State_Enter()
     {
         // actor.animator.Play("Idle");
+        // actor.
         actor.animator.SetBool("isIdle", true);
         actor.StayHere();
     }
 
     public override void State_Exit()
     {
-        
+        actor.animator.SetBool("isIdle", false);
     }
 
     public override void State_HandleInput()

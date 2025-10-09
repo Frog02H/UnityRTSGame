@@ -16,17 +16,29 @@ RequireComponent的使用：
 public class Actor : MonoBehaviour
 {
     protected Rigidbody actorRigidbody;
+
     protected NavMeshAgent agent;
     protected NavMeshObstacle navMeshObstacle;
+
+    // 该单位 对应状态 对应的模块挂载
     [HideInInspector] public Damageable damageable;
     [HideInInspector] public Damageable damageableTarget;
+    // 该单位 的 动画 触发
     [HideInInspector] public Animator animator;
     [HideInInspector] public AnimationEventListener animationEvent;
+    // 该单位 当前 的 协程
     [HideInInspector] public Coroutine currentTask;
+    // 该单位 的 其他特效 对象 
     [HideInInspector] public ActorVisualHandler visualHandler;
+
+    // 该单位 具体功能 对应的执行模块挂载
     public ActorCost ActorCost;
     public ActorAttack ActorAttack;
 
+    // 该单位 的 通用 参数
+    public WAI wai;
+
+    // 下面是以前的参数，未重新归类
     public bool isHover = false;
     bool isResource;
     private bool isIn = true;

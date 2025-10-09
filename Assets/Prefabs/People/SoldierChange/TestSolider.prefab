@@ -202,11 +202,11 @@ GameObject:
   - component: {fileID: 1783942788087993661}
   - component: {fileID: 1772774260068349441}
   - component: {fileID: 191410285006048967}
-  - component: {fileID: 4914356749181975494}
   - component: {fileID: 6920134561059542478}
   - component: {fileID: 7655354036647910752}
   - component: {fileID: 2926046664595937561}
   - component: {fileID: 7763873978988028076}
+  - component: {fileID: 5170506314555336789}
   m_Layer: 11
   m_Name: TestSolider
   m_TagString: Player
@@ -313,28 +313,6 @@ MonoBehaviour:
   ActorCost: {fileID: 0}
   ActorAttack: {fileID: 0}
   isHover: 0
---- !u!114 &4914356749181975494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215740945007305852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af7772dbc8cae747b565052c9b56b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDestroy:
-    m_PersistentCalls:
-      m_Calls: []
-  onHit:
-    m_PersistentCalls:
-      m_Calls: []
-  NavMeshObstacle: {fileID: 0}
-  totalHealth: 100
-  currentHealth: 100
-  isRealPlayerOrCom: 1
 --- !u!114 &6920134561059542478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +367,7 @@ MonoBehaviour:
   radius: 5
   isHover: 0
   detect: []
+  attack: []
   isAttack: 0
   isGuarding: 0
   isLock: 0
@@ -406,6 +385,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2808b41928d582847b9da7fb1f224e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5170506314555336789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215740945007305852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2b6b573d77e945a31594e070629b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  onHit:
+    m_PersistentCalls:
+      m_Calls: []
+  navMeshObstacle: {fileID: 0}
+  totalHealth: 100
+  currentHealth: 0
+  isRealPlayerOrCom: 1
 --- !u!1001 &3122634073347633006
 PrefabInstance:
   m_ObjectHideFlags: 0

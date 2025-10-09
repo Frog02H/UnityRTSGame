@@ -8,13 +8,13 @@ public class Damageable : MonoBehaviour
 {
     [HideInInspector] public UnityEvent onDestroy = new UnityEvent();
     [HideInInspector] public UnityEvent onHit = new UnityEvent();
-    [HideInInspector] public NavMeshObstacle NavMeshObstacle;
+    [HideInInspector] public NavMeshObstacle navMeshObstacle;
     [SerializeField] int totalHealth = 100;
     public int currentHealth;
     public bool isRealPlayerOrCom = true;
     private void Start()
     {
-        NavMeshObstacle = GetComponent<NavMeshObstacle>();
+        navMeshObstacle = GetComponent<NavMeshObstacle>();
         //NavMeshObstacle.enabled = true;
         currentHealth = totalHealth;
     }
@@ -32,7 +32,7 @@ public class Damageable : MonoBehaviour
     void Destroy()
     {
         onDestroy.Invoke();
-        NavMeshObstacle.enabled = false;
+        navMeshObstacle.enabled = false;
         // 这里暂时是销毁
         
         Destroy(gameObject);
