@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WAI
+public class TheActionIs
 {
-    /* wai 是 What Action Is 的 缩写， 有利于共享行为判断的数据 */
+    /* tai 是 The Action Is 的 缩写， 有利于共享行为判断的数据 */
 
     // 展示生死状态
     public bool isFaint = false;

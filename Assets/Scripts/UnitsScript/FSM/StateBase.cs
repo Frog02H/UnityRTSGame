@@ -5,29 +5,31 @@ using UnityEngine.AI;
 
 public abstract class StateBase : IState
 {
-    public Actor actor;
+    // public Actor actor;
 
+    /*
     public StateBase(Actor actor)
     {
         this.actor = actor;
     }
+    */
 
-    public virtual void State_Enter()
+    public virtual void State_Enter(Actor actor)
     {
 
     }
 
-    public virtual void State_Exit()
+    public virtual void State_Exit(Actor actor)
     {
         
     }
 
-    public virtual void State_HandleInput()
+    public virtual void State_HandleInput(Actor actor)
     {
 
     }
 
-    public virtual void State_Update()
+    public virtual void State_Update(Actor actor)
     {
 
     }

@@ -15,19 +15,27 @@ RequireComponent的使用：
 
 public class Actor : MonoBehaviour
 {
+    // 物理互动组件
     protected Rigidbody actorRigidbody;
 
+    // 寻路组件
     protected NavMeshAgent agent;
     protected NavMeshObstacle navMeshObstacle;
+
+    // 状态机
+    protected StateMachine stateMachine;
 
     // 该单位 对应状态 对应的模块挂载
     [HideInInspector] public Damageable damageable;
     [HideInInspector] public Damageable damageableTarget;
+
     // 该单位 的 动画 触发
     [HideInInspector] public Animator animator;
     [HideInInspector] public AnimationEventListener animationEvent;
+
     // 该单位 当前 的 协程
     [HideInInspector] public Coroutine currentTask;
+
     // 该单位 的 其他特效 对象 
     [HideInInspector] public ActorVisualHandler visualHandler;
 
@@ -35,8 +43,12 @@ public class Actor : MonoBehaviour
     public ActorCost ActorCost;
     public ActorAttack ActorAttack;
 
+    // 该单位 的 绝对表示 参数 
+    public int ActorID;
+
     // 该单位 的 通用 参数
-    public WAI wai;
+    public TheActionIs tai;
+    public ThePositionIs tpi;
 
     // 下面是以前的参数，未重新归类
     public bool isHover = false;
@@ -58,6 +70,7 @@ public class Actor : MonoBehaviour
 
     private void Awake()
     {
+        // 
         damageable = GetComponent<Damageable>();
         animator = GetComponentInChildren<Animator>();
         animationEvent = GetComponentInChildren<AnimationEventListener>();
@@ -65,18 +78,27 @@ public class Actor : MonoBehaviour
         animationEvent.attackEvent.AddListener(Attack);
         isResource = GetComponent<Resource>() ? true : false;
 
-        //
+        // 
         actorRigidbody = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
         navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = false;
+        // 状态机
+        stateMachine = GetComponent<StateMachine>();
+        stateMachine.LanchMachine(this);
 
-        //
+        // 
         ActorCost = GetComponent<ActorCost>();
     }
     public virtual void Update()
     {
         animator.SetFloat("Speed", Mathf.Clamp(agent.velocity.magnitude, 0, 1));
+    }
+
+    public void MoveTo(Vector3 destination)
+    {
+        tpi.target = destination;
+        stateMachine.ChangeStateTo(StateFactory.instance.GetState<State_Move>(this));
     }
 
     public void SetDestination(Vector3 destination)

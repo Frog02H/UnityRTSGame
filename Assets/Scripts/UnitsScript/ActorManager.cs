@@ -218,7 +218,7 @@ public class ActorManager : MonoBehaviour
             {
                 //停止单位的当前工作
                 // if (actor.ActorAttack)
-                 if (actor.ActorAttack)
+                if (actor.ActorAttack)
                 {
                     actor.ActorAttack.CancelAllAttackBool();
                     if (isGActive)
@@ -231,7 +231,8 @@ public class ActorManager : MonoBehaviour
                     actor.StopTask();
                 }
 
-                actor.SetDestination(Utilities.MouseToTerrainPosition());
+                actor.MoveTo(Utilities.MouseToTerrainPosition());
+                // actor.SetDestination(Utilities.MouseToTerrainPosition());
             }
         }
         else
