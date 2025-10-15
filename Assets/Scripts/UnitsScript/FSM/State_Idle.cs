@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,14 +12,15 @@ public class State_Idle : StateBase
     {
         // actor.animator.Play("Idle");
         actor.tai.isIdle = true;
-        actor.animator.SetBool("isIdle", true);
+        actor.animator.SetBool("isIdle", actor.tai.isIdle);
         actor.StayHere();
+        actor.tai.theAction = TheActionIs.TheAction.isIdle;
     }
 
     public override void State_Exit(Actor actor)
     {
         actor.tai.isIdle = false;
-        actor.animator.SetBool("isIdle", false);
+        actor.animator.SetBool("isIdle", actor.tai.isIdle);
     }
 
     public override void State_HandleInput(Actor actor)

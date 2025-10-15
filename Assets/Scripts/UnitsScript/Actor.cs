@@ -348,4 +348,11 @@ public class Actor : MonoBehaviour
         agent.SetDestination(transform.position);
     }
     #endregion
+
+    #region 状态机控制
+    public void SMSwiftTo(IState newState)
+    {
+        stateMachine.ChangeStateTo(newState);
+    }
+    #endregion
 }

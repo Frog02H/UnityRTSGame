@@ -150,13 +150,16 @@ public class ActorManager : MonoBehaviour
         }
     }
 
+    #region 3D箱选
     void SelectUpdate()
     {
         selActorObj();
         //自添加
         ControlSoldierMove();
     }
+    #endregion
 
+    #region 3D箱选具体方法
     void selActorObj()
     {
         if (Input.GetMouseButtonDown(1))
@@ -195,7 +198,9 @@ public class ActorManager : MonoBehaviour
             */
         }
     }
+    #endregion
 
+    #region 通用方法
     void SetTask()
     {
         /*         if (selectedActors.Count == 0)
@@ -343,7 +348,7 @@ public class ActorManager : MonoBehaviour
         }
 
     }
-
+    #endregion
     void SelectActors()
     {
         DeselectActors();
