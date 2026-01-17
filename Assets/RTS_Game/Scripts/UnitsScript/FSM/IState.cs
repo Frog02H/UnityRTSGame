@@ -5,8 +5,8 @@ using UnityEngine;
 
 public interface IState
 {
-    public void State_Enter();
-    public void State_Update();
-    public void State_Exit();
-    public void State_HandleInput();
+    public void State_Enter(Actor actor);
+    public void State_Update(Actor actor);
+    public void State_Exit(Actor actor);
+    public void State_HandleInput(Actor actor);
 }
