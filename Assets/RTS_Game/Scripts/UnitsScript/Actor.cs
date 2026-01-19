@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using RTS_Game.Units;
 
 [RequireComponent(typeof(Damageable))]
 
@@ -97,7 +98,7 @@ public class Actor : MonoBehaviour
 
     public void MoveTo(Vector3 destination)
     {
-        tpi.target = destination;
+        this.tpi.target = destination;
         stateMachine.ChangeStateTo(StateFactory.instance.GetState<State_Move>(this));
     }
 

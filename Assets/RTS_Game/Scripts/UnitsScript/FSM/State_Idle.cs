@@ -4,33 +4,39 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class State_Idle : StateBase
+namespace RTS_Game.Units
 {
-    // public State_Idle(Actor actor) : base(actor) {}
-
-    public override void State_Enter(Actor actor)
+    public class State_Idle : StateBase
     {
-        // actor.animator.Play("Idle");
-        actor.tai.isIdle = true;
-        actor.animator.SetBool("isIdle", actor.tai.isIdle);
-        actor.StayHere();
-        actor.tai.theAction = TheActionIs.TheAction.isIdle;
+        // public State_Idle(Actor actor) : base(actor) {}
+
+        public override void State_Enter(Actor actor)
+        {
+            // actor.animator.Play("Idle");
+            // actor.tai.isIdle = true;
+            actor.tai.isIdle = true;
+            // actor.animator.SetBool("isIdle", actor.tai.isIdle);
+            actor.animator.SetBool("isIdle", actor.tai.isIdle);
+            actor.StayHere();
+            actor.tai.theAction = TheActionIs.TheAction.Idle;
+        }
+
+        public override void State_Exit(Actor actor)
+        {
+            actor.tai.isIdle = false;
+            actor.animator.SetBool("isIdle", actor.tai.isIdle);
+            actor.tai.theAction = TheActionIs.TheAction.none;
+        }
+
+        public override void State_HandleInput(Actor actor)
+        {
+
+        }
+
+        public override void State_Update(Actor actor)
+        {
+
+        }
+
     }
-
-    public override void State_Exit(Actor actor)
-    {
-        actor.tai.isIdle = false;
-        actor.animator.SetBool("isIdle", actor.tai.isIdle);
-    }
-
-    public override void State_HandleInput(Actor actor)
-    {
-        
-    }
-
-    public override void State_Update(Actor actor)
-    {
-
-    }
-
 }
