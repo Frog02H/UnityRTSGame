@@ -16,7 +16,7 @@ namespace RTS_Game.Units
             this.actor = actor;
             if (currentState == null)
             {
-                if(StateFactory.instance == null)
+                if (StateFactory.instance == null)
                 {
                     Debug.Log("You are Right!");
                 }
@@ -24,7 +24,20 @@ namespace RTS_Game.Units
                 {
                     Debug.Log("StateFactory.instance is NOT NULL!");
                 }
-                currentState = StateFactory.instance.GetState<State_Idle>(actor);
+
+                if (actor != null)
+                {
+                    if (StateFactory.instance.GetState<State_Idle>(actor) == null)
+                    {
+                        Debug.Log("GetState返回值是null啊！");
+                    }
+
+                    currentState = StateFactory.instance.GetState<State_Idle>(actor);
+                }
+                else
+                {
+                    Debug.Log("actor为null!");
+                }
             }
         }
 

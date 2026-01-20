@@ -9,6 +9,8 @@ namespace RTS_Game.Units
     public class State_Idle : StateBase
     {
         // public State_Idle(Actor actor) : base(actor) {}
+        
+        public State_Idle() : base() {}
 
         public override void State_Enter(Actor actor)
         {

@@ -18,6 +18,8 @@ namespace RTS_Game.Units
         }
         */
 
+        public StateBase() { }
+
         public virtual void State_Enter(Actor actor)
         {
 

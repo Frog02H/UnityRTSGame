@@ -84,6 +84,11 @@ public class Actor : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         navMeshObstacle = GetComponent<NavMeshObstacle>();
         navMeshObstacle.enabled = false;
+
+        // 该单位 的 通用 参数
+        tai = new TheActionIs();
+        tpi = new ThePositionIs();
+
         // 状态机
         stateMachine = GetComponent<StateMachine>();
         stateMachine.LanchMachine(this);

@@ -51,7 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Game_Test.sln",
+    "dotnet.defaultSolution": "UnityRTSGame.sln",
     "dotnet.codeLens.enableReferencesCodeLens": true,
     "dotnet.codeLens.enableTestsCodeLens": true
 }

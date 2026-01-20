@@ -9,6 +9,8 @@ namespace RTS_Game.Units
     {
         // public State_Move(Actor actor) : base(actor) {}
 
+        public State_Move() : base() {}
+
         public override void State_Enter(Actor actor)
         {
             actor.tai.isMove = true;
