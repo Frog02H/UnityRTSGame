@@ -98,6 +98,10 @@ public class Actor : MonoBehaviour
 
     public void MoveTo(Vector3 destination)
     {
+        if(destination != null)
+        {
+            Debug.Log("destination with VALUES.");
+        }
         this.tpi.target = destination;
         stateMachine.ChangeStateTo(StateFactory.instance.GetState<State_Move>(this));
     }

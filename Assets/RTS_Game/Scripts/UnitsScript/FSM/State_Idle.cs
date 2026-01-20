@@ -30,7 +30,7 @@ namespace RTS_Game.Units
 
         public override void State_HandleInput(Actor actor)
         {
-
+            
         }
 
         public override void State_Update(Actor actor)
