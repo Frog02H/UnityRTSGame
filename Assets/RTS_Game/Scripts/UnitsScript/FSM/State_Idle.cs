@@ -10,7 +10,7 @@ namespace RTS_Game.Units
     {
         // public State_Idle(Actor actor) : base(actor) {}
         
-        public State_Idle() : base() {}
+        public State_Idle() : base() { Debug.Log("State_Idle 构造函数被调用！"); }
 
         public override void State_Enter(Actor actor)
         {

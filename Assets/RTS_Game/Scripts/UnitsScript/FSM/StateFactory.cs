@@ -26,12 +26,23 @@ namespace RTS_Game.Units
             {
                 // 如果不存在，将此实例设为单例
                 instance = this;
+                // 确保字典被初始化
+                if(statesPool == null)
+                {
+                    statesPool = new Dictionary<int, Dictionary<Type, IState>>();
+                    Debug.Log("statesPool在Awake里彻底初始化！");
+                }
+                else
+                {
+                    Debug.Log("statesPool在Awake之前就已经初始化了!!！");
+                }
                 // 可选：使该游戏对象在加载新场景时不被销毁，用于全局管理器
                 // DontDestroyOnLoad(this.gameObject);
             }
+            
         }
         
-        public IState GetState<T>(Actor actor) where T : IState, new()
+        public IState TestState<T>(Actor actor) where T : IState
         {
             Debug.Log("temp生成前！");
             State_Idle temp = new State_Idle();
@@ -46,6 +57,28 @@ namespace RTS_Game.Units
             }
             
             return temp;
+        }
+
+        public IState GetState<T>(Actor actor) where T : IState, new()
+        {
+            /*             
+            Debug.Log("temp生成前！");
+            State_Idle temp = new State_Idle();
+            Debug.Log("temp已经生成完了！");
+            if (temp != null)
+            {
+                Debug.Log("temp不为null！");
+            }
+            else
+            {
+                Debug.Log("temp是null！！！");
+            }
+            
+            return temp; 
+            */
+
+            Debug.Log($"actor.ActorID: {actor.ActorID}");
+            Debug.Log($"statesPool.ContainsKey(actor.ActorID): {statesPool.ContainsKey(actor.ActorID)}");
 
             if (!statesPool.ContainsKey(actor.ActorID))
             {

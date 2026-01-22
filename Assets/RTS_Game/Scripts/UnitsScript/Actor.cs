@@ -90,12 +90,20 @@ public class Actor : MonoBehaviour
         tpi = new ThePositionIs();
 
         // 状态机
-        stateMachine = GetComponent<StateMachine>();
-        stateMachine.LanchMachine(this);
+        // stateMachine = GetComponent<StateMachine>();
+        // stateMachine.LanchMachine(this);
 
         // 
         ActorCost = GetComponent<ActorCost>();
     }
+
+    public void Start()
+    {
+        // 状态机
+        stateMachine = GetComponent<StateMachine>();
+        // stateMachine.LanchMachine(this);
+    }
+
     public virtual void Update()
     {
         animator.SetFloat("Speed", Mathf.Clamp(agent.velocity.magnitude, 0, 1));
@@ -108,7 +116,11 @@ public class Actor : MonoBehaviour
             Debug.Log("destination with VALUES.");
         }
         this.tpi.target = destination;
-        stateMachine.ChangeStateTo(StateFactory.instance.GetState<State_Move>(this));
+        
+        Debug.Log($"stateMachine == null: {stateMachine == null}");
+        IState state_Move = StateFactory.instance.GetState<State_Move>(this);
+        Debug.Log($"state_Move == null: {state_Move == null}");
+        stateMachine.ChangeStateTo(state_Move);
     }
 
     public void SetDestination(Vector3 destination)
