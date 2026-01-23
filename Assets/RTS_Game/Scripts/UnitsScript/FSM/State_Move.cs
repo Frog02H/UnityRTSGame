@@ -14,16 +14,20 @@ namespace RTS_Game.Units
         public override void State_Enter(Actor actor)
         {
             actor.tai.isMove = true;
-            actor.animator.SetBool("isMove", actor.tai.isMove);
+            // 现在暂时没用bool控制动画机，所以这个bool值设置现在也没啥用
+            // actor.animator.SetBool("isMove", actor.tai.isMove);
             actor.tai.theAction = TheActionIs.TheAction.Move;
             actor.SetDestination(actor.tpi.target);
+            Debug.Log("State_Move 的 State_Enter 已经到末尾了！");
         }
 
         public override void State_Exit(Actor actor)
         {
             actor.tai.isMove = false;
-            actor.animator.SetBool("isMove", actor.tai.isMove);
+            // 现在暂时没用bool控制动画机，所以这个bool值设置现在也没啥用
+            // actor.animator.SetBool("isMove", actor.tai.isMove);
             actor.tai.theAction = TheActionIs.TheAction.none;
+            Debug.Log("State_Idle 的 State_Exit 已经到末尾了！");
         }
 
         public override void State_HandleInput(Actor actor)

@@ -90,7 +90,7 @@ public class Actor : MonoBehaviour
         tpi = new ThePositionIs();
 
         // 状态机
-        // stateMachine = GetComponent<StateMachine>();
+        stateMachine = GetComponent<StateMachine>();
         // stateMachine.LanchMachine(this);
 
         // 
@@ -100,7 +100,7 @@ public class Actor : MonoBehaviour
     public void Start()
     {
         // 状态机
-        stateMachine = GetComponent<StateMachine>();
+        // stateMachine = GetComponent<StateMachine>();
         // stateMachine.LanchMachine(this);
     }
 

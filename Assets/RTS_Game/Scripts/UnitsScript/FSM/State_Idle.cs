@@ -15,19 +15,21 @@ namespace RTS_Game.Units
         public override void State_Enter(Actor actor)
         {
             // actor.animator.Play("Idle");
-            // actor.tai.isIdle = true;
             actor.tai.isIdle = true;
+            // 现在暂时没用bool控制动画机，所以这个bool值设置现在也没啥用
             // actor.animator.SetBool("isIdle", actor.tai.isIdle);
-            actor.animator.SetBool("isIdle", actor.tai.isIdle);
             actor.StayHere();
             actor.tai.theAction = TheActionIs.TheAction.Idle;
+            Debug.Log("State_Idle 的 State_Enter 已经到末尾了！");
         }
 
         public override void State_Exit(Actor actor)
         {
             actor.tai.isIdle = false;
-            actor.animator.SetBool("isIdle", actor.tai.isIdle);
+            // 现在暂时没用bool控制动画机，所以这个bool值设置现在也没啥用
+            // actor.animator.SetBool("isIdle", actor.tai.isIdle);
             actor.tai.theAction = TheActionIs.TheAction.none;
+            Debug.Log("State_Idle 的 State_Exit 已经到末尾了！");
         }
 
         public override void State_HandleInput(Actor actor)
