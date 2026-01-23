@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 2926046664595937561}
   - component: {fileID: 7763873978988028076}
   - component: {fileID: 5170506314555336789}
+  - component: {fileID: 7870918127841487776}
   m_Layer: 11
   m_Name: TestSolider
   m_TagString: Player
@@ -312,6 +313,7 @@ MonoBehaviour:
   visualHandler: {fileID: 0}
   ActorCost: {fileID: 0}
   ActorAttack: {fileID: 0}
+  ActorID: 0
   isHover: 0
 --- !u!114 &6920134561059542478
 MonoBehaviour:
@@ -407,6 +409,18 @@ MonoBehaviour:
   totalHealth: 100
   currentHealth: 0
   isRealPlayerOrCom: 1
+--- !u!114 &7870918127841487776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215740945007305852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027b062bf0af9f94c95e522ff68db3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3122634073347633006
 PrefabInstance:
   m_ObjectHideFlags: 0

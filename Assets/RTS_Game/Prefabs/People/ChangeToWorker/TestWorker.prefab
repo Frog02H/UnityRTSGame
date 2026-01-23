@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: -1285677622493846110}
   - component: {fileID: 4888167887209493213}
   - component: {fileID: 3655980590087807320}
+  - component: {fileID: 599498791487361247}
   m_Layer: 11
   m_Name: TestWorker
   m_TagString: Player
@@ -347,6 +348,7 @@ MonoBehaviour:
   visualHandler: {fileID: 0}
   ActorCost: {fileID: 0}
   ActorAttack: {fileID: 0}
+  ActorID: 0
   isHover: 0
   hitInfoPoint: {x: 0, y: 0, z: 0}
   BuilderCollider: {fileID: 0}
@@ -401,6 +403,18 @@ MonoBehaviour:
   totalHealth: 100
   currentHealth: 0
   isRealPlayerOrCom: 1
+--- !u!114 &599498791487361247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607344560690938274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027b062bf0af9f94c95e522ff68db3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7523606358097947541
 PrefabInstance:
   m_ObjectHideFlags: 0
