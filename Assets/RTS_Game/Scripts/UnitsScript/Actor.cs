@@ -22,6 +22,7 @@ public class Actor : MonoBehaviour
     // 寻路组件
     protected NavMeshAgent agent;
     protected NavMeshObstacle navMeshObstacle;
+    public NavMeshAgent _agent { get {return agent;} }
 
     // 状态机
     protected StateMachine stateMachine;
@@ -50,6 +51,9 @@ public class Actor : MonoBehaviour
     // 该单位 的 通用 参数
     public TheActionIs tai;
     public ThePositionIs tpi;
+
+    // 该单位 的 通用 事件集合
+    public ActorAction actorAction;
 
     // 下面是以前的参数，未重新归类
     public bool isHover = false;
@@ -88,6 +92,9 @@ public class Actor : MonoBehaviour
         // 该单位 的 通用 参数
         tai = new TheActionIs();
         tpi = new ThePositionIs();
+
+        // 该单位 的 通用 事件集合
+        actorAction = new ActorAction();
 
         // 状态机
         stateMachine = GetComponent<StateMachine>();

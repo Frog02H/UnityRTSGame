@@ -20,7 +20,7 @@ namespace RTS_Game.Units
             // actor.animator.SetBool("isIdle", actor.tai.isIdle);
             actor.StayHere();
             actor.tai.theAction = TheActionIs.TheAction.Idle;
-            Debug.Log("State_Idle 的 State_Enter 已经到末尾了！");
+            Debug.Log("State_Idle 的 State_Enter！");
         }
 
         public override void State_Exit(Actor actor)
@@ -29,7 +29,7 @@ namespace RTS_Game.Units
             // 现在暂时没用bool控制动画机，所以这个bool值设置现在也没啥用
             // actor.animator.SetBool("isIdle", actor.tai.isIdle);
             actor.tai.theAction = TheActionIs.TheAction.none;
-            Debug.Log("State_Idle 的 State_Exit 已经到末尾了！");
+            Debug.Log("State_Idle 的 State_Exit！");
         }
 
         public override void State_HandleInput(Actor actor)

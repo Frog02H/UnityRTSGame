@@ -200,7 +200,7 @@ public class ActorManager : MonoBehaviour
     }
     #endregion
 
-    #region 通用方法
+    #region SetTask() 通用方法
     void SetTask()
     {
         /*         if (selectedActors.Count == 0)
@@ -349,6 +349,8 @@ public class ActorManager : MonoBehaviour
 
     }
     #endregion
+
+    #region 选择单位，添加进选择队列
     void SelectActors()
     {
         DeselectActors();
@@ -368,6 +370,9 @@ public class ActorManager : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    #region 清除选择队列里的 Actor
     public void DeselectActors()
     {
         foreach (Actor actor in selectedActors)
@@ -380,7 +385,9 @@ public class ActorManager : MonoBehaviour
         }
         selectedActors.Clear();
     }
+    #endregion
 
+    #region  在场己方所有单位队列的修改
     public void RomveUpdateAllActors()
     {
         for (int i = 0; i < allActors.Count; i++)
@@ -391,7 +398,9 @@ public class ActorManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region  己方所有已被选择的单位队列的修改
     public void RomveUpdateSelectedActors()
     {
         for (int i = 0; i < selectedActors.Count; i++)
@@ -402,7 +411,9 @@ public class ActorManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region 暂时没用
     public void RomveUpdateRPActors()
     {
         for (int i = 0; i < RPActors.Count; i++)
@@ -413,6 +424,7 @@ public class ActorManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
     private void OnDrawGizmos()
     {
@@ -422,12 +434,15 @@ public class ActorManager : MonoBehaviour
         Gizmos.DrawWireCube(center, size);
     }
 
+    #region 线框选择并指挥单位总体方法
     void SelectUpdateWithLine()
     {
         selSoldierObj();
         ControlSoldierMove();
     }
+    #endregion
 
+    #region 线框选择总体方法
     private void selSoldierObj()
     {
         if (Input.GetMouseButtonDown(1))
@@ -486,7 +501,9 @@ public class ActorManager : MonoBehaviour
 
         }
     }
+    #endregion
 
+    #region 角色移动的控制总体方法
     private void ControlSoldierMove()
     {
         if (Input.GetMouseButtonDown(0))
@@ -507,9 +524,10 @@ public class ActorManager : MonoBehaviour
 
             SetTask();
         }
-
     }
+    #endregion
 
+    #region 选择单位的具体方法
     private void SelectActorsWithLine(Vector3 center, Vector3 half)
     {
         Collider[] colliders = Physics.OverlapBox(center, half);
@@ -525,7 +543,9 @@ public class ActorManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region 单位警戒状态检测和执行方法
     private void GuardUpdate()
     {
         // Debug.Log("GuardUpdate!");
@@ -558,7 +578,9 @@ public class ActorManager : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region 按键检测
     private void PressActionKey()
     {
 
@@ -621,7 +643,7 @@ public class ActorManager : MonoBehaviour
 
         }
     }
-
+    #endregion
 
     #region 玩家单位全杀！
     public void KillThemAll()
