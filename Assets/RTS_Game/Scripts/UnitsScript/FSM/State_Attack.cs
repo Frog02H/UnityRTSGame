@@ -11,7 +11,7 @@ namespace RTS_Game.Units
 
         public override void State_Enter(Actor actor)
         {
-
+            
         }
 
         public override void State_Exit(Actor actor)
@@ -26,7 +26,7 @@ namespace RTS_Game.Units
 
         public override void State_Update(Actor actor)
         {
-
+            actor.ActorAttack.AAUpdate();
         }
     }
 }

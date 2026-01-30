@@ -4,6 +4,7 @@ using System.Text;
 using DG.Tweening;
 using UnityEngine;
 
+[RequireComponent(typeof(Actor))]
 public class ActorAttack : MonoBehaviour
 {
     [SerializeField] float height;
